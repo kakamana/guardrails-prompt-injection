@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prompt-guard"
+version = "0.1.0"
+description = "Guardrails & Prompt Injection Defense — classifier + canonicalizer + output filter + red-team eval"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn>=1.4",
+  "matplotlib",
+  "seaborn",
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "joblib",
+  "pyarrow",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "httpx",
+  "ruff",
+  "jupyterlab",
+  "nbformat",
+  "mlflow",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
